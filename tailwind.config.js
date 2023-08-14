@@ -10,6 +10,11 @@ module.exports = {
       fontFamily: {
         // we can add the selected font family here
       },
+      fontSize: {
+        "h1": "54px",
+        "h2": "42px",
+        "h3": "34px"
+      },
       colors: {
         'black-': '#242424',
         'grayish': '#e6e6e7',
