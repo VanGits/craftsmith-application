@@ -36,7 +36,7 @@ const DropDown = ({ type, element, toggleDropdown, setToggleDropdown }) => {
 };
 
 const Nav = () => {
-  const user = false;
+  const user = true;
   const [toggleDropdown, setToggleDropdown] = useState(false);
   const [toggleDropdown1, setToggleDropdown1] = useState(false);
   const [toggleDropdown2, setToggleDropdown2] = useState(false);
@@ -81,7 +81,7 @@ const Nav = () => {
           <div className=" justify-between w-full flex items-center">
             <div className="hidden lg:flex  w-[60%]  justify-around items-center">
               <p className="hidden  2xl:block max-sm:hidden font-semibold text-lg text-grayish tracking-wide;">
-                Brows by:
+                Browse by:
               </p>
               <DropDown
                 type={"Crafts"}
