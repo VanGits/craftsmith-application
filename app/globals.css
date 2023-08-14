@@ -2,26 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #242424;
+  border-radius: 5px;
 }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b81435;
+}
+
+.black_btn {
+  @apply rounded-lg border border-black- bg-black- font-extrabold py-1.5 px-5 active:scale-[0.9] active:rounded-full text-grayish transition-all hover:bg-grayish hover:text-rose-500 text-center text-sm  flex items-center justify-center;
+}
+
+.outline_btn {
+  @apply rounded-full border border-black- font-extrabold bg-transparent py-1.5 px-5 active:scale-[0.9] active:rounded-md text-black- transition-all hover:bg-black- hover:text-rose-500 text-center text-sm  flex items-center justify-center;
+}
+.dropdown {
+  @apply absolute -right-2 top-[45px]  p-2 rounded-lg bg-grayish min-w-[100px] flex flex-col justify-center gap-2 items-center;
+}
+.dropdown1 {
+  @apply absolute right-0 top-full mt-3 w-full p-5 rounded-lg bg-grayish min-w-[210px] flex flex-col gap-2 justify-end items-end;
+}
+.dropdown_link {
+  @apply text-sm text-gray-700 hover:text-rose-500 font-medium;
+}
+
