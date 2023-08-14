@@ -37,7 +37,7 @@ const DropDown = ({ type, element, toggleDropdown, setToggleDropdown }) => {
 };
 
 const Nav = () => {
-  const user = false;
+  const user = true;
   const [toggleDropdown, setToggleDropdown] = useState(false);
   const [toggleDropdown1, setToggleDropdown1] = useState(false);
   const [toggleDropdown2, setToggleDropdown2] = useState(false);
@@ -46,6 +46,7 @@ const Nav = () => {
 
   const [navColor, setNavColor] = useState("#242424");
   const [textColor, setTextColor] = useState("#e6e6e7")
+ 
   const listenScrollEvent = () => {
     // Change colors when scroll down
     window.scrollY > 10 ? setNavColor("#fff") : setNavColor("#242424");
@@ -76,7 +77,7 @@ const Nav = () => {
               height={50}
               className=" invert"
             />
-            <p style= {{color: textColor}} className="max-sm:hidden font-semibold text-lg tracking-wide;">
+            <p style={{ color: textColor }} className="max-sm:hidden font-semibold text-lg tracking-wide;">
               Craftsmith
             </p>
           </Link>
@@ -84,7 +85,7 @@ const Nav = () => {
         <div className="sm:flex ml-5  w-[80%] items-center  justify-between">
           <div className=" justify-between w-full flex items-center">
             <div className="hidden lg:flex  w-[60%]  justify-around items-center">
-              <p style= {{color: textColor}}className="hidden  2xl:block max-sm:hidden font-semibold text-lg text-grayish tracking-wide;">
+              <p style={{ color: textColor }} className="hidden  2xl:block max-sm:hidden font-semibold text-lg text-grayish tracking-wide;">
                 Browse by:
               </p>
               <DropDown
@@ -104,7 +105,7 @@ const Nav = () => {
                 element={countries}
                 toggleDropdown={toggleDropdown4}
                 setToggleDropdown={setToggleDropdown4}
-               
+
               />
             </div>
             <div className="max-[400px]:hidden ml-2 flex lg:w-[50%] w-[100%] px-2 items-center bg-grayish rounded-lg">
@@ -124,9 +125,9 @@ const Nav = () => {
       <div className="flex max-[400px]:w-[100%]  items-center justify-end">
         <div className="flex relative">
           <LanguageIcon
-            className="mr-5 active:scale-[0.9] cursor-pointer text-black"
+            className="button-hover mr-5 active:scale-[0.9] cursor-pointer text-black"
             onClick={() => setToggleDropdown(!toggleDropdown)}
-            style= {{color: textColor}}
+            style={{ color: textColor }}
           />
           {toggleDropdown && (
             <div className="dropdown">
@@ -136,7 +137,7 @@ const Nav = () => {
                   className="dropdown_link w-full outline_btn"
                   onClick={() => setToggleDropdown(false)}
                   key={index}
-                  
+
                 >
                   {language}
                 </Link>
@@ -146,15 +147,15 @@ const Nav = () => {
         </div>
         {user ? (
           <div className="flex gap-3 md:gap-5 items-center">
-            <NotificationsIcon className="mr-5 active:scale-[0.9] cursor-pointer" style= {{color: textColor}}  />
-              <Image
-                src={user.image || "/assets/default.jpg"}
-                width={37}
-                height={37}
-                className="rounded-full"
-                alt="profile"
-                onClick={() => setToggleDropdown1(!toggleDropdown1)}
-              />
+            <NotificationsIcon className=" button-hover cursor-pointer" style={{ color: textColor }} />
+            <Image
+              src={user.image || "/assets/default.jpg"}
+              width={37}
+              height={37}
+              className="rounded-full cursor-pointer"
+              alt="profile"
+              onClick={() => setToggleDropdown1(!toggleDropdown1)}
+            />
             <div className="flex relative mt-10">
               {toggleDropdown1 && (
                 <div className="dropdown1">
@@ -188,7 +189,11 @@ const Nav = () => {
           </div>
         ) : (
           <>
-            <button type="button" className=" mr-5 outline_btn" style={{color: textColor}}>
+            <button
+              type="button"
+              className="button-hover mr-5 outline_btn"
+              style={{ color: textColor }} 
+            >
               Log in
             </button>
             <button type="button" className="black_btn">

@@ -44,5 +44,9 @@ body{
   @apply text-sm text-gray-700 hover:text-rose-500 font-medium;
 }
 
+/* Change button text color on hover */
+.button-hover:hover{
+  color: #f50057 !important;
+}
 
 
