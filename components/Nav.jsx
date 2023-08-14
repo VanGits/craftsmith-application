@@ -37,7 +37,7 @@ const DropDown = ({ type, element, toggleDropdown, setToggleDropdown }) => {
 };
 
 const Nav = () => {
-  const user = true;
+  const user = false;
   const [toggleDropdown, setToggleDropdown] = useState(false);
   const [toggleDropdown1, setToggleDropdown1] = useState(false);
   const [toggleDropdown2, setToggleDropdown2] = useState(false);
@@ -67,7 +67,7 @@ const Nav = () => {
       }}
       className="sticky shadow-md top-0 flex justify-between items-center w-full p-3 bg-transparent"
     >
-      <div className="flex w-[60%] xl:w-[60%] lg:w-[70%] justify-between">
+      <div className="flex max-[400px]:w-[100%] w-[55%] xl:w-[60%] lg:w-[70%] justify-between">
         <div className="flex sm:w-[200px] w-[50px] ">
           <Link href="/" className="flex gap-2 justify-center items-center">
             <Image
@@ -82,7 +82,7 @@ const Nav = () => {
             </p>
           </Link>
         </div>
-        <div className="sm:flex ml-5  w-[80%] items-center  justify-between">
+        <div className="sm:flex ml-5 max-[400px]:-ml-1 w-[80%] items-center  justify-between">
           <div className=" justify-between w-full flex items-center">
             <div className="hidden lg:flex  w-[60%]  justify-around items-center">
               <p style={{ color: textColor }} className="hidden  2xl:block max-sm:hidden font-semibold text-lg text-grayish tracking-wide;">
@@ -108,7 +108,7 @@ const Nav = () => {
 
               />
             </div>
-            <div className="max-[400px]:hidden ml-2 flex lg:w-[50%] w-[100%] px-2 items-center bg-grayish rounded-lg">
+            <div className=" ml-2 flex lg:w-[50%] w-[100%] px-2 items-center bg-grayish rounded-lg">
               <input
                 type="text"
                 placeholder="search"
@@ -122,10 +122,10 @@ const Nav = () => {
           </div>
         </div>
       </div>
-      <div className="flex max-[400px]:w-[100%]  items-center justify-end">
-        <div className="flex relative">
+      <div className="flex max-[400px]:w-[100%] items-center justify-end">
+        <div className="flex relative max-[400px]:-mr-[10px]">
           <LanguageIcon
-            className="button-hover mr-5 active:scale-[0.9] cursor-pointer text-black"
+            className="button-hover  mr-5 active:scale-[0.9] cursor-pointer text-black"
             onClick={() => setToggleDropdown(!toggleDropdown)}
             style={{ color: textColor }}
           />
