@@ -20,11 +20,12 @@ const DropDown = ({ type, element, toggleDropdown, setToggleDropdown }) => {
       </button>
       {toggleDropdown && (
         <div className="dropdown">
-          {element.map((e) => (
+          {element.map((e, index) => (
             <Link
               href="/"
               className="dropdown_link w-full outline_btn"
               onClick={() => setToggleDropdown(!toggleDropdown)}
+              key={index}
             >
               {e}
             </Link>
@@ -43,9 +44,12 @@ const Nav = () => {
   const [toggleDropdown3, setToggleDropdown3] = useState(false);
   const [toggleDropdown4, setToggleDropdown4] = useState(false);
 
-  const [navColor, setnavColor] = useState("#transparent");
+  const [navColor, setNavColor] = useState("#242424");
+  const [textColor, setTextColor] = useState("#e6e6e7")
   const listenScrollEvent = () => {
-    window.scrollY > 10 ? setnavColor("#2424244d") : setnavColor("transparent");
+    // Change colors when scroll down
+    window.scrollY > 10 ? setNavColor("#fff") : setNavColor("#242424");
+    window.scrollY > 10 ? setTextColor("#242424") : setTextColor("#e6e6e7");
   };
   useEffect(() => {
     window.addEventListener("scroll", listenScrollEvent);
@@ -60,27 +64,27 @@ const Nav = () => {
         backgroundColor: navColor,
         transition: "all 300ms",
       }}
-      className="sticky top-0 flex justify-between items-center w-full p-3 bg-transparent"
+      className="sticky shadow-md top-0 flex justify-between items-center w-full p-3 bg-transparent"
     >
       <div className="flex w-[60%] xl:w-[60%] lg:w-[70%] justify-between">
         <div className="flex sm:w-[200px] w-[50px] ">
           <Link href="/" className="flex gap-2 justify-center items-center">
             <Image
-              src="/logo.png"
+              src="/assets/logo.png"
               alt="logo"
               width={50}
               height={50}
               className=" invert"
             />
-            <p className="max-sm:hidden font-semibold text-lg text-grayish tracking-wide;">
-              Crafthmith
+            <p style= {{color: textColor}} className="max-sm:hidden font-semibold text-lg tracking-wide;">
+              Craftsmith
             </p>
           </Link>
         </div>
         <div className="sm:flex ml-5  w-[80%] items-center  justify-between">
           <div className=" justify-between w-full flex items-center">
             <div className="hidden lg:flex  w-[60%]  justify-around items-center">
-              <p className="hidden  2xl:block max-sm:hidden font-semibold text-lg text-grayish tracking-wide;">
+              <p style= {{color: textColor}}className="hidden  2xl:block max-sm:hidden font-semibold text-lg text-grayish tracking-wide;">
                 Browse by:
               </p>
               <DropDown
@@ -100,9 +104,10 @@ const Nav = () => {
                 element={countries}
                 toggleDropdown={toggleDropdown4}
                 setToggleDropdown={setToggleDropdown4}
+               
               />
             </div>
-            <div className="max-[400px]:hidden ml-2 flex lg:w-[50%] w-[100%] px-2 items-center bg-grayish rounded-sm">
+            <div className="max-[400px]:hidden ml-2 flex lg:w-[50%] w-[100%] px-2 items-center bg-grayish rounded-lg">
               <input
                 type="text"
                 placeholder="search"
@@ -119,16 +124,19 @@ const Nav = () => {
       <div className="flex max-[400px]:w-[100%]  items-center justify-end">
         <div className="flex relative">
           <LanguageIcon
-            className="mr-5 active:scale-[0.9] text-black- hover:text-rose-500"
+            className="mr-5 active:scale-[0.9] cursor-pointer text-black"
             onClick={() => setToggleDropdown(!toggleDropdown)}
+            style= {{color: textColor}}
           />
           {toggleDropdown && (
             <div className="dropdown">
-              {languages.map((language) => (
+              {languages.map((language, index) => (
                 <Link
                   href="/"
                   className="dropdown_link w-full outline_btn"
                   onClick={() => setToggleDropdown(false)}
+                  key={index}
+                  
                 >
                   {language}
                 </Link>
@@ -138,9 +146,9 @@ const Nav = () => {
         </div>
         {user ? (
           <div className="flex gap-3 md:gap-5 items-center">
-            <NotificationsIcon className="hover:text-rose-500 text-black-" />
+            <NotificationsIcon className="mr-5 active:scale-[0.9] cursor-pointer" style= {{color: textColor}}  />
               <Image
-                src={user.image || "/default.jpg"}
+                src={user.image || "/assets/default.jpg"}
                 width={37}
                 height={37}
                 className="rounded-full"
