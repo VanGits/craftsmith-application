@@ -37,7 +37,7 @@ const DropDown = ({ type, element, toggleDropdown, setToggleDropdown }) => {
 };
 
 const Nav = () => {
-  const user = true;
+  const user = false;
   const [toggleDropdown, setToggleDropdown] = useState(false);
   const [toggleDropdown1, setToggleDropdown1] = useState(false);
   const [toggleDropdown2, setToggleDropdown2] = useState(false);
@@ -188,7 +188,7 @@ const Nav = () => {
           </div>
         ) : (
           <>
-            <button type="button" className=" mr-5 outline_btn">
+            <button type="button" className=" mr-5 outline_btn" style={{color: textColor}}>
               Log in
             </button>
             <button type="button" className="black_btn">
