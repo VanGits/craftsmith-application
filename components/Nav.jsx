@@ -60,7 +60,7 @@ const Nav = () => {
         backgroundColor: navColor,
         transition: "all 300ms",
       }}
-      className="sticky bg-slate-500 top-0 flex justify-between items-center w-full p-3 bg-transparent"
+      className="sticky top-0 flex justify-between items-center w-full p-3 bg-transparent"
     >
       <div className="flex w-[60%] xl:w-[60%] lg:w-[70%] justify-between">
         <div className="flex sm:w-[200px] w-[50px] ">
@@ -106,7 +106,7 @@ const Nav = () => {
               <input
                 type="text"
                 placeholder="search"
-                class=" w-[100%] p-2 -ml-2 focus:outline-none  text-black- border-none bg-transparent placeholder-black- "
+                className=" w-[100%] p-2 -ml-2 focus:outline-none  text-black- border-none bg-transparent placeholder-black- "
               />
               <SearchIcon
                 className="outline-btn hover:text-rose-500"
