@@ -36,7 +36,7 @@ const DropDown = ({ type, element, toggleDropdown, setToggleDropdown }) => {
 };
 
 const Nav = () => {
-  const user = true;
+  const user = false;
   const [toggleDropdown, setToggleDropdown] = useState(false);
   const [toggleDropdown1, setToggleDropdown1] = useState(false);
   const [toggleDropdown2, setToggleDropdown2] = useState(false);
@@ -60,9 +60,9 @@ const Nav = () => {
         backgroundColor: navColor,
         transition: "all 300ms",
       }}
-      className="sticky top-0 flex justify-between items-center w-full p-3 bg-transparent"
+      className="sticky bg-slate-500 top-0 flex justify-between items-center w-full p-3 bg-transparent"
     >
-      <div className="flex w-[60%] xl:w-[60%] lg:w-[80%] justify-between">
+      <div className="flex w-[60%] xl:w-[60%] lg:w-[70%] justify-between">
         <div className="flex sm:w-[200px] w-[50px] ">
           <Link href="/" className="flex gap-2 justify-center items-center">
             <Image
@@ -102,7 +102,7 @@ const Nav = () => {
                 setToggleDropdown={setToggleDropdown4}
               />
             </div>
-            <div className="ml-2 flex lg:w-[50%] w-[100%] px-2 items-center bg-grayish rounded-sm">
+            <div className="max-[400px]:hidden ml-2 flex lg:w-[50%] w-[100%] px-2 items-center bg-grayish rounded-sm">
               <input
                 type="text"
                 placeholder="search"
@@ -116,7 +116,7 @@ const Nav = () => {
           </div>
         </div>
       </div>
-      <div className="flex items-center">
+      <div className="flex max-[400px]:w-[100%]  items-center justify-end">
         <div className="flex relative">
           <LanguageIcon
             className="mr-5 active:scale-[0.9] text-black- hover:text-rose-500"
@@ -180,7 +180,7 @@ const Nav = () => {
           </div>
         ) : (
           <>
-            <button type="button" className="mr-5 outline_btn">
+            <button type="button" className=" mr-5 outline_btn">
               Log in
             </button>
             <button type="button" className="black_btn">
