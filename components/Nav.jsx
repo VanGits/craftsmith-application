@@ -230,15 +230,15 @@ const Nav = () => {
               height={37}
               className="rounded-full cursor-pointer"
               alt="profile"
-              onClick={() => handleDropdownToggle(0)}
+              onClick={() => handleDropdownToggle(6)}
             />
             <div className="flex relative mt-10">
-              {openDropdownIndex === 0 && (
+              {openDropdownIndex === 6 && (
                 <div className="dropdown1">
                   <Link
                     href="/"
                     className="w-full outline_btn"
-                    onClick={() => handleDropdownToggle(0)}
+                    onClick={() => handleDropdownToggle(6)}
                   >
                     My Profile
                   </Link>
@@ -246,13 +246,13 @@ const Nav = () => {
                   <Link
                     href="/"
                     className="w-full black_btn"
-                    onClick={() => handleDropdownToggle(0)}
+                    onClick={() => handleDropdownToggle(6)}
                   >
                     Create Post
                   </Link>
                   <button
                     type="button"
-                    onClick={() => handleDropdownToggle(0)}
+                    onClick={() => handleDropdownToggle(6)}
                     className=" w-full black_btn"
                   >
                     Sign Out
