@@ -7,6 +7,7 @@ import LanguageIcon from "@mui/icons-material/Language";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SearchIcon from "@mui/icons-material/Search";
 import { languages, crafts, tools, countries } from "@constants/index";
+import classNames from 'classnames';
 
 const DropDown = ({ type, element, toggleDropdown, setToggleDropdown }) => {
   return (
@@ -46,11 +47,15 @@ const Nav = () => {
 
   const [navColor, setNavColor] = useState("#242424");
   const [textColor, setTextColor] = useState("#e6e6e7")
+  const [scrolled, setScrolled] = useState(false);
  
   const listenScrollEvent = () => {
     // Change colors when scroll down
+    // Check if scrolled
+    const scrollThreshold = 10;
     window.scrollY > 10 ? setNavColor("#fff") : setNavColor("#242424");
     window.scrollY > 10 ? setTextColor("#242424") : setTextColor("#e6e6e7");
+    setScrolled(window.scrollY > scrollThreshold);
   };
   useEffect(() => {
     window.addEventListener("scroll", listenScrollEvent);
@@ -65,7 +70,9 @@ const Nav = () => {
         backgroundColor: navColor,
         transition: "all 300ms",
       }}
-      className="sticky shadow-md top-0 flex justify-between items-center w-full p-3 bg-transparent"
+      
+      // only show shadow if scrolled down (white background)
+      className={classNames('sticky', scrolled ? 'shadow-md' : '', 'top-0 flex justify-between items-center w-full p-3 bg-transparent')}
     >
       <div className="flex max-[400px]:w-[100%] w-[55%] xl:w-[60%] lg:w-[70%] justify-between">
         <div className="flex sm:w-[200px] w-[50px] ">
@@ -112,7 +119,7 @@ const Nav = () => {
               <input
                 type="text"
                 placeholder="search"
-                className=" w-[100%] p-2 -ml-2 focus:outline-none  text-black- border-none bg-transparent placeholder-black- "
+                className=" w-[100%] pl-4 p-2 -ml-2 focus:outline-none  text-black- border-none bg-transparent placeholder-black- "
               />
               <SearchIcon
                 className="outline-btn hover:text-rose-500"
