@@ -26,6 +26,7 @@ export const crafts = [
 ];
 
 export const tools = ["Hammer", "Forge", "Anvil", "..."];
+
 export const countries = [
   "China",
   "England ",
@@ -39,4 +40,23 @@ export const countries = [
   "Spain",
   "Turkey",
   "...",
+];
+
+export const craftsmanship = [
+  {
+    name: "Blacksmith",
+    logo: "/assets/blacksmith.png",
+  },
+  {
+    name: "Woodsmith",
+    logo: "/assets/woodsmith.png",
+  },
+  {
+    name: "Carpenter",
+    logo: "/assets/carpenter.png",
+  },
+  {
+    name: "Swordsmith",
+    logo: "/assets/swordsmith .png",
+  },
 ];
